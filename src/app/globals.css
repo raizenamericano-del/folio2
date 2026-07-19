@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 3 7 18; /* #030712 */
+    --foreground: 214 219 220;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: rgb(3, 7, 18);
+    color: #f3f4f6;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: #030712;
+    color: #f3f4f6;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom styled scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #030712;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #06b6d4;
+    box-shadow: 0 0 10px #06b6d4;
+  }
+}
+
+/* Custom glow utility classes */
+@layer utilities {
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.4), inset 0 0 10px rgba(6, 182, 212, 0.2);
+  }
+  .glow-pink {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.4), inset 0 0 10px rgba(236, 72, 153, 0.2);
+  }
+  .glow-purple {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4), inset 0 0 10px rgba(139, 92, 246, 0.2);
+  }
+  .glow-text-cyan {
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.6), 0 0 20px rgba(6, 182, 212, 0.2);
+  }
+  .glow-text-pink {
+    text-shadow: 0 0 10px rgba(236, 72, 153, 0.6), 0 0 20px rgba(236, 72, 153, 0.2);
+  }
+  .glow-border-cyan {
+    border-color: rgba(6, 182, 212, 0.5);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.2);
+  }
+}
+
+/* Cyber grid background layer */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(30, 41, 59, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 41, 59, 0.3) 1px, transparent 1px);
+}
+
+/* CSS variables for 3D card perspective */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.transform-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Custom animation for typewriter cursor */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+.typewriter-cursor {
+  border-right: 2px solid #06b6d4;
+  animation: blink 0.75s step-end infinite;
+}
+
+/* Custom glow borders for cards */
+.neon-glow-card {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.neon-glow-card:hover {
+  border-color: rgba(6, 182, 212, 0.4);
+}
